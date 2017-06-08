@@ -1,0 +1,25 @@
+<div class="row book" ng-controller="bookCtrl">
+    <h3>图书信息总览：</h3>
+    <table class="table1">
+        <tr>
+            <td>编号</td>
+            <td>书名</td>
+            <td>作者</td>
+            <td>版本</td>
+            <td>可借数目</td>
+        </tr>
+        <tr ng-repeat="book in book" ng-class-odd="'odd'">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.version}}</td>
+            <td>{{book.num}}</td>
+        </tr>
+    </table>
+    <table class="table2">
+        <tr class="tr_last">
+            <td ng-repeat="num in pageNumArray" class="num" ng-click="toPage(num)">{{num}}</td>
+            <td>当前第{{currentPage+1}}页</td>
+        </tr>
+    </table>
+</div>

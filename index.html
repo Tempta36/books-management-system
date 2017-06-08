@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="appModule" >
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="frame/jquery-3.0.0.js"></script>
+    <script src="frame/angular-1.4.0-rc.2/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <!--<script src="frame/angular-1.4.0-rc.2/angular-ui-router.min.js"></script>-->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+    <link rel="stylesheet" href="frame/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="index.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-1"></div>
+            <div class="col-md-5"><h1>x管理后台</h1></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-1 class1">当前用户</div>
+            <div class="col-md-1 class1"><a>退出</a></div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="row menu">
+        <!--<div class="col-md-1"></div>-->
+        <div class="col-md-3" ng-controller="appCtrl">
+            <ul ng-repeat="menu in menus"  style="list-style: none;">
+                <li class="menu1 " ng-click="menu.enable=menu.enable?false:true">
+                    <a>{{menu.text}}</a>
+                </li>
+                <ul ng-repeat="subMenu in  menu.subMenus"  style="list-style: none;">
+                    <li class="menu2" ng-show="menu.enable">
+                        <a href="#{{subMenu.action}}">{{subMenu.text}}</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        <div class="col-md-8" ng-view></div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+</body>
+</html>

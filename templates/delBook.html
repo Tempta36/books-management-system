@@ -1,0 +1,21 @@
+<div class="row delBook" ng-controller="bookCtrl">
+    <h3>删除图书信息：</h3>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>书名</td>
+            <td>作者</td>
+            <td>版本</td>
+            <td>可借数目</td>
+            <td>操作</td>
+        </tr>
+        <tr ng-repeat="book in book">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.version}}</td>
+            <td>{{book.num}}</td>
+            <td><button class="btn" ng-click="delBookData(book.id)">删除</button></td>
+        </tr>
+    </table>
+</div>

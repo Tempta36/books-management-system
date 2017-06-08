@@ -1,0 +1,24 @@
+<div class="delReader" ng-controller="readerCtrl">
+    <h3>删除读者信息：</h3>
+    <table>
+        <tr class="list_reader">
+            <td style="font-weight: 600">编号</td>
+            <td style="font-weight: 600">姓名</td>
+            <td style="font-weight: 600">性别</td>
+            <td style="font-weight: 600">电话</td>
+            <td style="font-weight: 600">邮箱</td>
+            <td style="font-weight: 600">注册时间</td>
+            <td>操作</td>
+        </tr>
+        <!-- ng-class-odd无法添加属性-->
+        <tr ng-repeat="read in reader" ng-class-odd="'odd'">
+            <td>{{read.id}}</td>
+            <td>{{read.name}}</td>
+            <td>{{read.sex}}</td>
+            <td>{{read.tel}}</td>
+            <td>{{read.email}}</td>
+            <td>{{read.time}}</td>
+            <td><button class="btn" ng-click="delReaderData(read.id)">删除</button></td>
+        </tr>
+    </table>
+</div>

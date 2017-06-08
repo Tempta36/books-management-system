@@ -1,0 +1,20 @@
+<div class="addBook" ng-controller="bookCtrl">
+    <h3>添加图书信息：</h3>
+    <form  class="form-horizontal" method="post">
+        <label for="book_name" class="control-label">书名:</label>
+        <input type="text" id="book_name" ng-model="addBookData.name">
+        <br>
+        <label class="control-label" for="book_author">作者:</label>
+        <input type="text" ng-model="addBookData.author" id="book_author"/>
+        <br/>
+        <label for="book_tel" class="control-label">版本:</label>
+        <input type="text" id="book_tel" ng-model="addBookData.version"/>
+        <br/>
+        <label for="book_num" class="control-label">可借数目: </label>
+        <input type="text" id="book_num" ng-model="addBookData.num" ng-blur="addBookDataNum(addBookData.num)"/>
+        <span ng-hide="true" class="span_num">请输入数字</span>
+        <br/><br/>
+        <input type="submit" value="提交" class="btn-default"
+               ng-click="bookDataSubmit()"/>
+    </form>
+</div>
